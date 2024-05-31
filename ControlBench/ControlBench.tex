@@ -67,7 +67,7 @@ In our evaluation process, a control engineer expert carefully assesses the answ
     \item \textbf{Calculation Error:} This denotes that mistakes were made during the mathematical computation in the process of solving the problem.
     \item \textbf{Reasoning Error:} This refers to a flaw in the logical progression or inference made while solving the problem.
     \item \textbf{Incorrect Knowledge:} This means that the answer was based on incorrect information or understanding of the problem.
-    \item\textbf{Lack of Knowledge:} The solution was hindered by a lack of understanding or familiarity with the relevant concepts.
+    \item \textbf{Lack of Knowledge:} The solution was hindered by a lack of understanding or familiarity with the relevant concepts.
     \item \textbf{Misreading The Plot:} This refers to problems in which it is necessary to extract data from the provided plots in the statement of the problem, but LLMs could not correctly extract the graphical data.
     \item \textbf{Didn't solve:} The problem was left unsolved mainly by providing a general approach; however, no mathematical approaches are provided.
 \end{itemize}
@@ -526,6 +526,7 @@ Show that the Laplace transform of the derivative \(\frac{df}{dt}\) of a functio
 is given by \(\mathcal{L}\left[ \frac{df}{dt} \right] = sF(s)-f(0^+)\), where \(F(s) = \mathcal{L}[f(t)]\).
 
 \textbf{\textcolor{red}{Solution :}} \\
+
 Integrating by parts.
 \begin{equation}
     \lim_{\substack{T \to +\infty \\ \epsilon \to 0}} \int_{\epsilon}^T \frac{df}{dt} e^{-st} dt = \lim_{\substack{T \to +\infty \\ \epsilon \to 0}} \left[ f(t) e^{-st}|_{\epsilon}^T + s \int_{\epsilon}^T f(t) e^{-st} dt\right] = -f(0^+)+s F(s)
@@ -548,6 +549,7 @@ Determine
 \end{itemize}
 
 \textbf{\textcolor{red}{Solution :}} \\
+
 \begin{itemize}
     \item[(a)] \(\omega_n^2 = 9\) or \(\omega_n = 3\) rad/sec
     \item[(b)] \(2\zeta \omega_n = 5\) or \(\zeta = \frac{5}{2\omega_n} = \frac{5}{6}\)
@@ -791,7 +793,8 @@ Consider the following mass-spring system:
 where $m$ is the mass, $k$ is the spring constant and $\rho$ is the friction coefficient. Find the values of $c_1$ and $c_2$ to guarantee that the transfer function of the resulting system has the form of the
 standard 2nd-order system. Write down the expressions for the parameters $\zeta$ and $\omega_n$ in terms of $k$, $\rho$, and $m$. \\
 
-\noindent \textbf{\textcolor{red}{Solution:}} \\
+\noindent
+\textbf{\textcolor{red}{Solution :}} \\
 The given system can be transformed into its transfer function as follows:
 \[
 C(s I -A)^{-1}B=\frac{\frac{c_2}{m}s+\frac{c_1}{m}}{s^2+\frac{\rho}{m}s+\frac{k}{m}}
@@ -817,7 +820,8 @@ H(s)=\frac{16}{s^2+4s+16}
 \]
 Suppose that you are given the following time-domain specs: $t_r \leq 0.6$, $t_s \leq 1.6$ (defined by the time system's response reach and stay within $5\%$ of steady state). Does the given system satisfy these specs? Recall that $t_r=\frac{1.8}{\omega_n}$ and $t_s=\frac{3}{\zeta \omega_n}$. \\
 
-\noindent \textbf{\textcolor{red}{Solution:}} \\
+\noindent 
+\textbf{\textcolor{red}{Solution :}} \\
 Recall that $t_r=\frac{1.8}{\omega_n}$ and $t_s=\frac{3}{\sigma}$.
 Therefore by the given specs $t_r \leq 0.6$ and $t_s \leq 1.6$  we can conclude that:
 \[
@@ -840,7 +844,7 @@ Consider the transfer function
 H(s)=\frac{16}{s^2+4s+16}
 \]
 Suppose that you are given the following time-domain specs: $t_r \leq 0.6$, $t_s \leq 1.6$ (defined by the time system's response reach and stay within $5\%$ of steady state). Suppose additionally, we have overshoot: $M_p \leq \frac{1}{e^2}$. Does the given system satisfy these specs? \\
-\textbf{\textcolor{red}{Solution:}} \\
+\textbf{\textcolor{red}{Solution :}} \\
 Recall that $t_r=\frac{1.8}{\omega_n}$, $t_s=\frac{3}{\sigma}$ and $M_p =e^{-\frac{\zeta \pi}{\sqrt{1-\zeta^2}}}=e^{-\pi \arctan \theta}$. Therefore by the given specs $t_r \leq 0.6$, $t_s \leq 1.6$ and  $M_p \leq \frac{1}{e^2}$, we can conclude that:
 \[
 \omega_n \geq 3 \text{, and  } \sigma \geq 1.875 \text{, and  }  \theta \geq 42^\circ
@@ -857,7 +861,7 @@ The admissible region due to overshoot constraint is plotted as the yellow shade
 \subsection{Second-Order Systems}
 
 Consider a second-order system with peak time $t_p = 0.5$ sec. and $5\%$ settling time $t_s = 1.5$ sec. Determine the poles of this system. \\
-\textbf{\textcolor{red}{Solution:}} \\
+\textbf{\textcolor{red}{Solution :}} \\
 The poles of this system are given by $s= -\sigma \pm j \omega_d$ where $\sigma=\zeta \omega_n$ and $\omega_d=\omega_n \sqrt{1-\zeta^2}$.
 
 Given information $t_p = 0.5$ sec and $5\%$ settling time $t_s = 1.5$ sec leads to $\omega_d=2 \pi$ and $\sigma=2$. Therefore the poles of the system are $s=-2 \pm 2 \pi $
@@ -866,7 +870,7 @@ Given information $t_p = 0.5$ sec and $5\%$ settling time $t_s = 1.5$ sec leads 
 \subsection{Time-Domain Specs}
 
 Consider a second-order system with peak time $t_p = 0.5$ sec. and $5\%$ settling time $t_s = 1.5$ sec. Does this system satisfy rising time $t_r \leq 0.18$ sec? \\
-\textbf{\textcolor{red}{Solution:}} \\
+\textbf{\textcolor{red}{Solution :}} \\
 Recall that $t_r=\frac{1.8}{\omega_n}$. Therefore this system must have $\omega_n \geq 10$ in order to satisfy the rise time requirement. 
 
 We know that $\omega_n^2 =\sigma^2 +\omega_d^2$. Given that $t_p = 0.5$ sec and $5\%$ settling time $t_s = 1.5$ sec, we can compute the corresponding $\omega_d=2 \pi$ and $\sigma=2$. 
@@ -1767,7 +1771,8 @@ Consider the following transfer function:
 G(s)=\frac{20 e^{-s}}{0.5s+1}
 \]
 Plot the step response of this system. Identify anything unusual or different in the response and report the reason for this behaviour. \\ 
-\noindent \textbf{\textcolor{red}{Solution:}} \\
+\noindent 
+\textbf{\textcolor{red}{Solution :}} \\
 The step response of the given system can be interpreted as the step response of the transfer function \(G(s) = \frac{20}{0.5s+1}\), followed by the application of the effect of \(e^{-s}\), which shifts the response by 1 second.
 
 \begin{figure}[h!]
@@ -1792,7 +1797,7 @@ Which of the following is the corresponding step response? Explain your choice a
     \caption{Sample step response plots}
     \label{fig:prb50}
 \end{figure}
-\textbf{\textcolor{red}{Solution:}} \\
+\textbf{\textcolor{red}{Solution :}} \\
 The DC gain of H(s) equals 1, so the left plot is immediately rejected because it corresponds to DC gain of 0.5. The right plot show the correct DC gain, but it has an initial dip which indicates the presence of a RHP zero, while H(s) has no zeros. The middle plot is consistent with a stable second-order transfer function with DC gain of 1 and with no zeros, so it is the correct one.
 
 \clearpage
@@ -2489,7 +2494,7 @@ Consider the following first order system:
 \]
 with a PD controller in the form $u(t) = K_p(r(t) - y(t)) + K_d \dot{y}(t)$.
 Choose $(K_p, K_d)$ so that the closed loop system is stable and has $(\omega_n, \zeta) = (2, 0.25)$. \\
-\noindent \textbf{\textcolor{red}{Solution:}} \\
+\noindent \textbf{\textcolor{red}{Solution :}} \\
 We can derive the transfer function as follows:
 \begin{equation*}
 \begin{split}
@@ -2524,7 +2529,7 @@ Consider the following system:
 \]
 Design a dynamic output feedback controller such that the poles of the closed-loop system are at $-10$, $-10 \pm 5j$. \\
 
-\textbf{\textcolor{red}{Solution:}} \\
+\textbf{\textcolor{red}{Solution :}} \\
 We can obtain a dynamic output feedback controller by combining state feedback controller with a full state observer design. The state-space model for the resulting controller will be:
 \begin{equation}
     \begin{split}
@@ -2542,7 +2547,7 @@ Consider a feedback control system under unity feedback setting with a controlle
 G(s)=\frac{1}{s^2(s+1)}
 \]
 Suppose we would like to place a closed loop pole at $\bar{s}=-1+j$. What is the phase of $K(\bar{s})$?  \\
-\textbf{\textcolor{red}{Solution:}} \\
+\textbf{\textcolor{red}{Solution :}} \\
 The controller needs to contribute $\pi $ rad since $\angle G(\bar{s}) +\angle K(\bar{s}) \equiv \pi$ which leads to:
 
 \[
@@ -3115,7 +3120,7 @@ G(s)=\frac{s(s+10)(s+12)}{(s-1)(s+11)(s+13)(s+14)}
 \]
 Is there a non-negative value of $K$ for which the closed loop system is stable? Explain why or why not?\\
 
-\textbf{\textcolor{red}{Solution:}} \\
+\textbf{\textcolor{red}{Solution :}} \\
 No, there is no non-negative value of $K$ for which the closed loop system is stable. Check the root locus given below. The root locus branch between the RHP pole and the imaginary axis zero keeps the system unstable. 
 
 \begin{figure}[h!]
